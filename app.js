@@ -18,7 +18,8 @@ var campgroundRoutes = require("./routes/campgrounds"),
 
 // Connecting to our app DB (didnt exist
 // this line created it also)
-mongoose.connect("mongodb://localhost/yelp_campv12");
+//mongoose.connect("mongodb://localhost/yelp_campv12");
+mongoose.connect("mongodb://wesley:***REMOVED***@ds261247.mlab.com:61247/yelpcamp_testdatabase");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -52,7 +53,7 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes); //all campground routes should start with /campground
 app.use("/", authRoutes);
 
-const port = process.env.PORT || 888;
+const port = process.env.PORT || 8888;
 
 app.listen(port, function() {
     console.log("YelpCamp server has started!");
