@@ -20,7 +20,7 @@ var campgroundRoutes = require("./routes/campgrounds"),
 
 // Connecting to our app DB (didnt exist
 mongoose.connect(process.env.DATABASEURL); //DATABASEURL was created via 'export' in the terminal
-
+//console.log(DATABASEURL); to see local database
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
