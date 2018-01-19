@@ -19,8 +19,10 @@ var campgroundRoutes = require("./routes/campgrounds"),
 
 
 // Connecting to our app DB (didnt exist
-mongoose.connect(process.env.DATABASEURL); //DATABASEURL was created via 'export' in the terminal
-//console.log(DATABASEURL); to see local database
+const url = process.env.DATABASEURL || "mongodb://localhost/yelp_campv12";
+mongoose.connect(url); //DATABASEURL was created via 'export' in the terminal
+//console.log(DATABASEURL); 
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
